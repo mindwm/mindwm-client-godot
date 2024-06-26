@@ -27,34 +27,38 @@ anchors_preset = 0
 offset_right = 703.0
 offset_bottom = 682.0
 script = ExtResource("1_nt63w")
-select_action_name = "action_up"
+select_action_name = "ui_accept"
+arc_inner_radius = 72
+arc_line_width = 2
+line_width = 2
 children_size = 36
 children_auto_sizing = true
 children_auto_sizing_factor = 0.5
+stroke_width = 2
 
 [node name="TextureRect" type="TextureRect" parent="radial_menu/RadialMenuAdvanced"]
 layout_mode = 0
-offset_left = 497.75
-offset_top = 166.917
-offset_right = 611.416
-offset_bottom = 280.583
+offset_left = 473.501
+offset_top = 180.917
+offset_right = 587.168
+offset_bottom = 294.583
 pivot_offset = Vector2(56.8333, 56.8333)
 texture = ExtResource("2_wwc5x")
 
 [node name="TextureRect2" type="TextureRect" parent="radial_menu/RadialMenuAdvanced"]
 layout_mode = 0
-offset_left = 91.5837
-offset_top = 166.917
-offset_right = 205.25
-offset_bottom = 280.583
+offset_left = 115.832
+offset_top = 180.917
+offset_right = 229.499
+offset_bottom = 294.583
 pivot_offset = Vector2(56.8333, 56.8333)
 texture = ExtResource("3_b6or2")
 
 [node name="TextureRect3" type="TextureRect" parent="radial_menu/RadialMenuAdvanced"]
 layout_mode = 0
 offset_left = 294.667
-offset_top = 518.667
+offset_top = 490.667
 offset_right = 408.333
-offset_bottom = 632.333
-pivot_offset = Vector2(56.8333, 56.8333)
+offset_bottom = 604.333
+pivot_offset = Vector2(56.8333, 56.8334)
 texture = ExtResource("4_0uic7")
