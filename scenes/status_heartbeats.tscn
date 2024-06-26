@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://dphuuum47n85w"]
+
+[ext_resource type="Script" path="res://scripts/status_heartbeats.gd" id="1_ywpkn"]
+
+[node name="status_heartbeats" type="PanelContainer"]
+offset_right = 77.0
+offset_bottom = 104.0
+script = ExtResource("1_ywpkn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="back" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/back"]
+layout_mode = 2
+text = "Back"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/back"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="value" type="Label" parent="VBoxContainer/back"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "✅"
+
+[node name="nats" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/nats"]
+layout_mode = 2
+text = "NATS"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/nats"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="value" type="Label" parent="VBoxContainer/nats"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "✅"
+
+[node name="dbus" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/dbus"]
+layout_mode = 2
+text = "DBus"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/dbus"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="value" type="Label" parent="VBoxContainer/dbus"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "✅"
+
+[node name="xorg" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/xorg"]
+layout_mode = 2
+text = "Xorg"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/xorg"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="value" type="Label" parent="VBoxContainer/xorg"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "✅"

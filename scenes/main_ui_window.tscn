@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bttlv3k235yq"]
+
+[ext_resource type="PackedScene" uid="uid://w8wmg687v302" path="res://scenes/main_ui.tscn" id="1_4n7xc"]
+
+[node name="main_ui_window" type="Window"]
+transparent_bg = true
+borderless = true
+transparent = true
+
+[node name="main_ui" parent="." instance=ExtResource("1_4n7xc")]

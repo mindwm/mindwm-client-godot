@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://clskbl2bqpmcb"]
+[gd_scene load_steps=3 format=3 uid="uid://clskbl2bqpmcb"]
+
+[ext_resource type="PackedScene" uid="uid://bttlv3k235yq" path="res://scenes/main_ui_window.tscn" id="1_rssl1"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_vhd22"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_vhd22")
+
+[node name="main_ui_window" parent="." instance=ExtResource("1_rssl1")]
