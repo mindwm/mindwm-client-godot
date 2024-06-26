@@ -13,7 +13,24 @@ stdenv.mkDerivation {
   src = ./.;
 
   nativeBuildInputs = [ ];
-  buildInputs = [ ];
+  buildInputs = with pkgs; [
+    freetype
+    openssl
+    alsaLib
+    libGLU
+    zlib
+    yasm
+    udev
+  ] ++ (with xorg; [
+    libX11
+    libXcursor
+    libXinerama
+    libXrandr
+    libXrender
+    libXi
+    libXext
+    libXfixes
+  ]);
 
   outputs = [ "out" ];
 
