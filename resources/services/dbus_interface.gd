@@ -32,6 +32,20 @@ func _process(_delta: float) -> void:
 		"/ui/switch":
 			print("emit switch_HUD")
 			hud_switch.emit()
-			
+		"/kevent/node/created":
+			print("new keven:")
+			show_kevent(msg.get_args()[0])
+
 		_:
 			print("Got unknown message: path: %s, args: %s" % [msg.get_path(), msg.get_args()])
+
+func show_kevent(ev: String) -> void:
+	var msg = JSON.parse_string(ev)
+	var payload = msg.payload.after
+	var doc = payload.properties
+	print("%s: %s\nps1: %s %s\n%s" % [
+		payload.labels[0],
+		msg.meta.operation,
+		doc.ps1, doc.user_input,
+		doc.output
+		])

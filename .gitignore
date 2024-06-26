@@ -2,6 +2,7 @@
 .godot/
 android/
 addons/xorg/bin/
+tmp/
 
 # Nix specific
 result
