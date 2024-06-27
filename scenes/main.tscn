@@ -11,3 +11,4 @@ script = ExtResource("1_vhd22")
 
 [node name="action_popup" parent="." instance=ExtResource("3_i68uk")]
 position = Vector2i(0, 0)
+visible = false

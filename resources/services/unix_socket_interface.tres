@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cc88y8hr1vwbl"]
+
+[ext_resource type="Script" path="res://resources/services/unix_socket_interface.gd" id="1_k74ss"]
+
+[resource]
+script = ExtResource("1_k74ss")

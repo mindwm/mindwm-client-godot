@@ -36,7 +36,9 @@
           packages = rec {
             release = pkgs.callPackage ./package.nix { inherit gdexts; withTarget = "template_release"; };
             debug = pkgs.callPackage ./package.nix { inherit gdexts; withTarget = "template_debug"; };
-            godot = inputs.godot.packages.${system}.default;
+            godot_editor = inputs.godot.packages.${system}.editor;
+            godot_template_debug = inputs.godot.packages.${system}.template_debug;
+            godot_template_release = inputs.godot.packages.${system}.template_release;
             default = release;
           };
         
@@ -45,18 +47,35 @@
               { name = "HTTP_PORT"; value = "8080"; }
             ];
             commands = [
-            { help = "update gdextensions";
+            { help = "update all";
               name = "update";
-              command = "mkdir -p ./addons && cp -fasv ${config.packages.debug}/addons/* ./addons/ && chmod -R u+w ./addons";
+              command = "update-gdexts && update-templates";
+            }
+            { help = "update gdextensions";
+              name = "update-gdexts";
+              command = ''
+                mkdir -p ./addons \
+                && cp -fasv ${config.packages.debug}/addons/* ./addons/ \
+                && chmod -R u+w ./addons
+              '';
+            }
+            { help = "update templates";
+              name = "update-templates";
+              command = ''
+                mkdir -p ./templates \
+                && cp -fasv ${config.packages.godot_template_debug}/bin/* ./templates/ \
+                && chmod -R u+w ./templates
+                cp -fasv ${config.packages.godot_template_release}/bin/* ./templates/ \
+                && chmod -R u+w ./templates
+              '';
             }
             { help = "start Godot editor";
               name = "godot";
-              command = "${config.packages.godot}/bin/godot4 -e $PWD/project.godot";
+              command = "${config.packages.godot_editor}/bin/godot.linuxbsd.editor.x86_64 -e $PWD/project.godot";
             }
             ];
             packages = [
               config.packages.debug
-              config.packages.godot
               (pkgs.python3.withPackages (ps: [ps.networkx]))
             ];
           };

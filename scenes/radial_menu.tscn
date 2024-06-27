@@ -7,7 +7,7 @@
 
 [node name="Window" type="Window"]
 transparent_bg = true
-position = Vector2i(300, 300)
+position = Vector2i(300, 0)
 size = Vector2i(1204, 1204)
 borderless = true
 always_on_top = true
@@ -60,5 +60,5 @@ offset_left = 294.667
 offset_top = 490.667
 offset_right = 408.333
 offset_bottom = 604.333
-pivot_offset = Vector2(56.8333, 56.8334)
+pivot_offset = Vector2(56.8333, 56.8333)
 texture = ExtResource("4_0uic7")

@@ -225,11 +225,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1719404437,
-        "narHash": "sha256-X1YkhVq2FhXxt1GJqnfCCBkVo3C0v3AfK9DE2LqzGP4=",
+        "lastModified": 1719517095,
+        "narHash": "sha256-a2Z36bh76ZZdkBzKs/EAG/EYiAtVpHQEgYbZWU5ri4o=",
         "owner": "mindwm",
         "repo": "godot4-nix",
-        "rev": "ece0228cb0e2a1d372173629c77d1c6f33776cce",
+        "rev": "25006608ea5bfd28bd5bcd56128f153e88778eb1",
         "type": "github"
       },
       "original": {
@@ -363,11 +363,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1719253556,
-        "narHash": "sha256-A/76RFUVxZ/7Y8+OMVL1Lc8LRhBxZ8ZE2bpMnvZ1VpY=",
+        "lastModified": 1719426051,
+        "narHash": "sha256-yJL9VYQhaRM7xs0M867ZFxwaONB9T2Q4LnGo1WovuR4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fc07dc3bdf2956ddd64f24612ea7fc894933eb2e",
+        "rev": "89c49874fb15f4124bf71ca5f42a04f2ee5825fd",
         "type": "github"
       },
       "original": {

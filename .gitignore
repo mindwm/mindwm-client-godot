@@ -1,8 +1,9 @@
 # Godot 4+ specific ignores
 .godot/
 android/
-addons/xorg/bin/
+addons/*/bin/
 tmp/
+templates/
 
 # Nix specific
 result
