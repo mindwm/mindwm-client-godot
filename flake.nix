@@ -15,6 +15,9 @@
     gdextension_dbus.url = "github:mindwm/gdextension-dbus";
     gdextension_dbus.inputs.nixpkgs.follows = "nixpkgs";
     gdextension_dbus.inputs.godot-cpp.follows = "godot-cpp";
+    gdextension_unixsock.url = "github:omgbebebe/gdextension-unix-socket";
+    gdextension_unixsock.inputs.nixpkgs.follows = "nixpkgs";
+    gdextension_unixsock.inputs.godot-cpp.follows = "godot-cpp";
   };
 
   outputs = inputs@{ flake-parts, gdextension_xorg, gdextension_dbus, ... }:
@@ -44,7 +47,7 @@
             commands = [
             { help = "update gdextensions";
               name = "update";
-              command = "mkdir -p ./addons && cp -fasv ${config.packages.debug}/addons/* ./addons/";
+              command = "mkdir -p ./addons && cp -fasv ${config.packages.debug}/addons/* ./addons/ && chmod -R u+w ./addons";
             }
             { help = "start Godot editor";
               name = "godot";
@@ -54,6 +57,7 @@
             packages = [
               config.packages.debug
               config.packages.godot
+              (pkgs.python3.withPackages (ps: [ps.networkx]))
             ];
           };
         };
