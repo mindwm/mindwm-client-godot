@@ -4,6 +4,7 @@ android/
 addons/*/bin/
 tmp/
 templates/
+export/
 
 # Nix specific
 result
