@@ -13,9 +13,12 @@ func _init() -> void:
 	if dbus.connect(dbus.DBUS_BUS_SESSION) != OK:
 		print("Unable to connect to session DBUS")
 	
-	dbus.request_name("org.mindwm.client", dbus.DBUS_NAME_FLAG_REPLACE_EXISTING)
+	dbus.request_name("org.mindwm.clien.godot", dbus.DBUS_NAME_FLAG_REPLACE_EXISTING)
 	
 	if dbus.add_match("interface='org.mindwm',member='client',type='signal'") != OK:
+		print("Unable to add matcher for signals")
+
+	if dbus.add_match("interface='org.mindwm.client',member='feedback_message',type='signal'") != OK:
 		print("Unable to add matcher for signals")
 	
 func _process(_delta: float) -> void:
@@ -36,6 +39,8 @@ func _process(_delta: float) -> void:
 		"/kevent/node/created":
 			print("new keven:")
 			show_kevent(msg.get_args()[0])
+		"/manager":
+			print("new feedback: %s" % msg.get_args())
 
 		_:
 			print("Got unknown message: path: %s, args: %s" % [msg.get_path(), msg.get_args()])
