@@ -12,9 +12,6 @@
     gdextension_xorg.url = "github:mindwm/gdextension-xorg";
     gdextension_xorg.inputs.nixpkgs.follows = "nixpkgs";
     gdextension_xorg.inputs.godot-cpp.follows = "godot-cpp";
-    gdextension_dbus.url = "github:mindwm/gdextension-dbus";
-    gdextension_dbus.inputs.nixpkgs.follows = "nixpkgs";
-    gdextension_dbus.inputs.godot-cpp.follows = "godot-cpp";
     gdextension_dbus_nodes.url = "github:omgbebebe/gdextension-dbus-nodes";
     gdextension_dbus_nodes.inputs.nixpkgs.follows = "nixpkgs";
     gdextension_dbus_nodes.inputs.godot-cpp.follows = "godot-cpp";
@@ -23,7 +20,7 @@
     gdextension_unixsock.inputs.godot-cpp.follows = "godot-cpp";
   };
 
-  outputs = inputs@{ flake-parts, gdextension_xorg, gdextension_dbus, ... }:
+  outputs = inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.devshell.flakeModule
