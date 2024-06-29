@@ -127,6 +127,24 @@
         "type": "github"
       }
     },
+    "flake-parts_7": {
+      "inputs": {
+        "nixpkgs-lib": "nixpkgs-lib_7"
+      },
+      "locked": {
+        "lastModified": 1717285511,
+        "narHash": "sha256-iKzJcpdXih14qYVcZ9QC9XuZYnPc6T8YImb6dX166kw=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "2a55567fcf15b1b1c7ed712a2c6fadaec7412ea8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -169,9 +187,33 @@
         "type": "github"
       }
     },
-    "gdextension_unixsock": {
+    "gdextension_dbus_nodes": {
       "inputs": {
         "flake-parts": "flake-parts_3",
+        "godot-cpp": [
+          "godot-cpp"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1719653297,
+        "narHash": "sha256-k5GGyiwQshIAN9nFwMWBYqkOV5vLq5dGo6cFeLorMLo=",
+        "owner": "omgbebebe",
+        "repo": "gdextension-dbus-nodes",
+        "rev": "6f66f067ac1ca247a678a970c9bc3035ccd43130",
+        "type": "github"
+      },
+      "original": {
+        "owner": "omgbebebe",
+        "repo": "gdextension-dbus-nodes",
+        "type": "github"
+      }
+    },
+    "gdextension_unixsock": {
+      "inputs": {
+        "flake-parts": "flake-parts_4",
         "godot-cpp": [
           "godot-cpp"
         ],
@@ -195,7 +237,7 @@
     },
     "gdextension_xorg": {
       "inputs": {
-        "flake-parts": "flake-parts_4",
+        "flake-parts": "flake-parts_5",
         "godot-cpp": [
           "godot-cpp"
         ],
@@ -219,7 +261,7 @@
     },
     "godot": {
       "inputs": {
-        "flake-parts": "flake-parts_5",
+        "flake-parts": "flake-parts_6",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -240,7 +282,7 @@
     },
     "godot-cpp": {
       "inputs": {
-        "flake-parts": "flake-parts_6",
+        "flake-parts": "flake-parts_7",
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
@@ -345,6 +387,18 @@
         "url": "https://github.com/NixOS/nixpkgs/archive/eb9ceca17df2ea50a250b6b27f7bf6ab0186f198.tar.gz"
       }
     },
+    "nixpkgs-lib_7": {
+      "locked": {
+        "lastModified": 1717284937,
+        "narHash": "sha256-lIbdfCsf8LMFloheeE6N31+BMIeixqyQWbSr2vk79EQ=",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/eb9ceca17df2ea50a250b6b27f7bf6ab0186f198.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/eb9ceca17df2ea50a250b6b27f7bf6ab0186f198.tar.gz"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1719145550,
@@ -382,6 +436,7 @@
         "devshell": "devshell",
         "flake-parts": "flake-parts",
         "gdextension_dbus": "gdextension_dbus",
+        "gdextension_dbus_nodes": "gdextension_dbus_nodes",
         "gdextension_unixsock": "gdextension_unixsock",
         "gdextension_xorg": "gdextension_xorg",
         "godot": "godot",

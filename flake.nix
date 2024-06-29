@@ -15,6 +15,9 @@
     gdextension_dbus.url = "github:mindwm/gdextension-dbus";
     gdextension_dbus.inputs.nixpkgs.follows = "nixpkgs";
     gdextension_dbus.inputs.godot-cpp.follows = "godot-cpp";
+    gdextension_dbus_nodes.url = "github:omgbebebe/gdextension-dbus-nodes";
+    gdextension_dbus_nodes.inputs.nixpkgs.follows = "nixpkgs";
+    gdextension_dbus_nodes.inputs.godot-cpp.follows = "godot-cpp";
     gdextension_unixsock.url = "github:omgbebebe/gdextension-unix-socket";
     gdextension_unixsock.inputs.nixpkgs.follows = "nixpkgs";
     gdextension_unixsock.inputs.godot-cpp.follows = "godot-cpp";

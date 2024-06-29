@@ -11,8 +11,7 @@ func _ready() -> void:
 	# set initiali size
 	get_window().size = Vector2i(width, height)
 	
-	Global.dbus.hud_switch.connect(_on_hud_switch)
-
+	$DBusServerUI.switch_ui.connect(_on_hud_switch)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

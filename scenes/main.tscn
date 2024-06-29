@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://clskbl2bqpmcb"]
+[gd_scene load_steps=8 format=3 uid="uid://clskbl2bqpmcb"]
 
 [ext_resource type="PackedScene" uid="uid://bttlv3k235yq" path="res://scenes/main_ui_window.tscn" id="1_rssl1"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_vhd22"]
 [ext_resource type="PackedScene" uid="uid://b3pmotbnxdy2b" path="res://scenes/radial_menu.tscn" id="3_i68uk"]
+[ext_resource type="Script" path="res://scripts/d_bus_server_ui.gd" id="4_r6bl0"]
+
+[sub_resource type="DBusMethod" id="DBusMethod_40o6e"]
+member = "show"
+flags = 12
+
+[sub_resource type="DBusMethod" id="DBusMethod_1sv66"]
+member = "hide"
+flags = 12
+
+[sub_resource type="DBusMethod" id="DBusMethod_le1au"]
+member = "switch"
+flags = 12
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_vhd22")
@@ -12,3 +25,10 @@ script = ExtResource("1_vhd22")
 [node name="action_popup" parent="." instance=ExtResource("3_i68uk")]
 position = Vector2i(0, 0)
 visible = false
+
+[node name="DBusServerUI" type="DBusServerNode" parent="."]
+object_path = "/"
+interface_name = "org.mindwm.client.godot.ui"
+methods = [SubResource("DBusMethod_40o6e"), SubResource("DBusMethod_1sv66"), SubResource("DBusMethod_le1au")]
+autostart = true
+script = ExtResource("4_r6bl0")
