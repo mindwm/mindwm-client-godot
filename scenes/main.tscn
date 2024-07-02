@@ -20,8 +20,6 @@ flags = 12
 [node name="main" type="Node2D"]
 script = ExtResource("1_vhd22")
 
-[node name="main_ui_window" parent="." instance=ExtResource("1_rssl1")]
-
 [node name="action_popup" parent="." instance=ExtResource("3_i68uk")]
 position = Vector2i(0, 0)
 visible = false
@@ -32,3 +30,15 @@ interface_name = "org.mindwm.client.godot.ui"
 methods = [SubResource("DBusMethod_40o6e"), SubResource("DBusMethod_1sv66"), SubResource("DBusMethod_le1au")]
 autostart = true
 script = ExtResource("4_r6bl0")
+
+[node name="main_ui_window" type="Window" parent="."]
+transparent_bg = true
+initial_position = 4
+borderless = true
+always_on_top = true
+transparent = true
+popup_window = true
+
+[node name="Control" parent="main_ui_window" instance=ExtResource("1_rssl1")]
+offset_right = 800.0
+offset_bottom = 600.0

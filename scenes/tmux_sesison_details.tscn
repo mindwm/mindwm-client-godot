@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://32ji3bdbnfnq"]
+
+[node name="tmux_sesison_details" type="PanelContainer"]
+offset_right = 753.0
+offset_bottom = 562.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="session_name" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="name" type="Label" parent="HBoxContainer/VBoxContainer/session_name"]
+layout_mode = 2
+text = "Name:"
+
+[node name="value" type="Label" parent="HBoxContainer/VBoxContainer/session_name"]
+layout_mode = 2
+text = "teama-rnd"
+
+[node name="window_count" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="name" type="Label" parent="HBoxContainer/VBoxContainer/window_count"]
+layout_mode = 2
+text = "Windows:"
+
+[node name="value" type="Label" parent="HBoxContainer/VBoxContainer/window_count"]
+layout_mode = 2
+text = "2"
+
+[node name="created" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="name" type="Label" parent="HBoxContainer/VBoxContainer/created"]
+layout_mode = 2
+text = "Created:"
+
+[node name="value" type="Label" parent="HBoxContainer/VBoxContainer/created"]
+layout_mode = 2
+text = "Sat Jun 29 16:04:49 2024"

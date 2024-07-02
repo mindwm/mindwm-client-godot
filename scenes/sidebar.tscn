@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://42hg3wd5oqv2"]
+
+[ext_resource type="Script" path="res://scripts/sidebar.gd" id="1_nxby6"]
+[ext_resource type="Texture2D" uid="uid://cd2iq0tvtpc1w" path="res://assets/icons/tmux.svg" id="1_xo1fl"]
+[ext_resource type="Texture2D" uid="uid://c3budy0oigw1j" path="res://assets/icons/settings.svg" id="2_fmv6c"]
+[ext_resource type="PackedScene" uid="uid://pg7w6yt6slax" path="res://scenes/tmux_sessions.tscn" id="3_cxwxt"]
+
+[node name="sidebar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -698.0
+offset_bottom = -585.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_nxby6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "MindWM UI"
+
+[node name="tmux_sessions" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "TMUX Sessions"
+icon = ExtResource("1_xo1fl")
+
+[node name="tmux_sessions_list" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="tmux_sessions2" parent="HBoxContainer/VBoxContainer/tmux_sessions_list" instance=ExtResource("3_cxwxt")]
+layout_mode = 2
+
+[node name="settings" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+icon = ExtResource("2_fmv6c")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/tmux_sessions" to="." method="_on_tmux_sessions_pressed"]

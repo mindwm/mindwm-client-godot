@@ -1,0 +1,125 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw68qgewoi661"]
+
+[ext_resource type="Texture2D" uid="uid://cd2iq0tvtpc1w" path="res://assets/icons/tmux.svg" id="1_qy6e8"]
+[ext_resource type="Texture2D" uid="uid://c3budy0oigw1j" path="res://assets/icons/settings.svg" id="2_gq37g"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="sidebar" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/sidebar"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer/sidebar/VBoxContainer"]
+layout_mode = 2
+text = "Tmux Sessions"
+icon = ExtResource("1_qy6e8")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/sidebar/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+
+[node name="ItemList" type="ItemList" parent="PanelContainer/HBoxContainer/sidebar/VBoxContainer/MarginContainer"]
+layout_mode = 2
+auto_height = true
+item_count = 3
+item_0/text = "session 1"
+item_1/text = "session 1"
+item_2/text = "session 1"
+
+[node name="Button2" type="Button" parent="PanelContainer/HBoxContainer/sidebar"]
+layout_mode = 2
+text = "Status"
+
+[node name="Button3" type="Button" parent="PanelContainer/HBoxContainer/sidebar"]
+layout_mode = 2
+text = "Settings"
+icon = ExtResource("2_gq37g")
+
+[node name="Button4" type="Button" parent="PanelContainer/HBoxContainer/sidebar"]
+layout_mode = 2
+text = "Help"
+
+[node name="Control" type="Control" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+
+[node name="Session info" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info/HBoxContainer"]
+layout_mode = 2
+text = "Name:"
+
+[node name="Label2" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info/HBoxContainer"]
+layout_mode = 2
+text = "teama-rnd"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info/HBoxContainer2"]
+layout_mode = 2
+text = "Windows:"
+
+[node name="Label2" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info/HBoxContainer2"]
+layout_mode = 2
+text = "2"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info/HBoxContainer3"]
+layout_mode = 2
+text = "Created:"
+
+[node name="Label2" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info/HBoxContainer3"]
+layout_mode = 2
+text = "Sat Jun 29 16:04:49 2024"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info/HBoxContainer4"]
+layout_mode = 2
+text = "Active:"
+
+[node name="Label2" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info/HBoxContainer4"]
+layout_mode = 2
+text = "true"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info/HBoxContainer5"]
+layout_mode = 2
+text = "Active:"
+
+[node name="Label2" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/ScrollContainer/Session info/HBoxContainer5"]
+layout_mode = 2
+text = "true"

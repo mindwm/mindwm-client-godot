@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://pg7w6yt6slax"]
+
+[ext_resource type="Script" path="res://scripts/tmux_sessions.gd" id="1_2tagf"]
+[ext_resource type="PackedScene" uid="uid://32ji3bdbnfnq" path="res://scenes/tmux_sesison_details.tscn" id="2_0ipgv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 387.0
+offset_bottom = 316.0
+script = ExtResource("1_2tagf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 387.0
+offset_bottom = 316.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="sessions_list" type="ItemList" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+auto_height = true
+item_count = 2
+item_0/text = "session1"
+item_1/text = "session2"
+
+[node name="tmux_sesison_details" parent="HBoxContainer" instance=ExtResource("2_0ipgv")]
+layout_mode = 2
+size_flags_horizontal = 3

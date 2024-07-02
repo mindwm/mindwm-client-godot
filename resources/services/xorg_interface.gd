@@ -9,6 +9,7 @@ func _init() -> void:
 func _ready():
 	print("xorg_interface _ready")
 	xorg.init()
+	xorg.refresh_xorg_windows()
 	xorg.clipboard_notify.connect(_on_clipboard_event)
 	call_deferred("_refresh_windows_list")
 

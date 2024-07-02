@@ -225,11 +225,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1719517095,
-        "narHash": "sha256-a2Z36bh76ZZdkBzKs/EAG/EYiAtVpHQEgYbZWU5ri4o=",
+        "lastModified": 1719690582,
+        "narHash": "sha256-Sp1klB4QZyuE3xMzWSJ9nMvHGNkItxBH/wEgShXITjI=",
         "owner": "mindwm",
         "repo": "godot4-nix",
-        "rev": "25006608ea5bfd28bd5bcd56128f153e88778eb1",
+        "rev": "b4a7091e01dc84ab67b9332fd7341d67b45f2f75",
         "type": "github"
       },
       "original": {
