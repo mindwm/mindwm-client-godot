@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://clskbl2bqpmcb"]
+[gd_scene load_steps=10 format=3 uid="uid://clskbl2bqpmcb"]
 
 [ext_resource type="PackedScene" uid="uid://bttlv3k235yq" path="res://scenes/main_ui_window.tscn" id="1_rssl1"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_vhd22"]
 [ext_resource type="PackedScene" uid="uid://b3pmotbnxdy2b" path="res://scenes/radial_menu.tscn" id="3_i68uk"]
+[ext_resource type="Script" path="res://scripts/dbus_server_graph.gd" id="4_4om2c"]
 [ext_resource type="Script" path="res://scripts/d_bus_server_ui.gd" id="4_r6bl0"]
+[ext_resource type="PackedScene" uid="uid://jqdh3m7wv2k6" path="res://scenes/node_graph.tscn" id="6_er8a1"]
 
 [sub_resource type="DBusMethod" id="DBusMethod_40o6e"]
 member = "show"
@@ -31,6 +33,12 @@ methods = [SubResource("DBusMethod_40o6e"), SubResource("DBusMethod_1sv66"), Sub
 autostart = true
 script = ExtResource("4_r6bl0")
 
+[node name="DBusServerGraph" type="DBusServerNode" parent="."]
+object_path = "/"
+interface_name = "org.mindwm.client.godot.graph"
+autostart = true
+script = ExtResource("4_4om2c")
+
 [node name="main_ui_window" type="Window" parent="."]
 transparent_bg = true
 initial_position = 4
@@ -42,3 +50,9 @@ popup_window = true
 [node name="Control" parent="main_ui_window" instance=ExtResource("1_rssl1")]
 offset_right = 800.0
 offset_bottom = 600.0
+
+[node name="Window" type="Window" parent="."]
+position = Vector2i(0, 36)
+size = Vector2i(1024, 1024)
+
+[node name="node_graph" parent="Window" instance=ExtResource("6_er8a1")]

@@ -20,6 +20,12 @@ signal tmux_sessions_changed
 signal tmux_session_created
 signal tmux_session_removed
 
+# Node Graph chagned events
+signal graph_node_created
+signal graph_node_deleted
+signal graph_edget_created
+signal graph_edget_deleted
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if DisplayServer.get_name() == "headless":
