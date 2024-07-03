@@ -15,6 +15,7 @@ func _ready() -> void:
 	Global.switch_ui.connect(_on_hud_switch)
 	Global.hide_ui.connect(_on_hud_hide)
 
+	Global.show_nodegraph.connect(_on_show_nodegraph)
 	#Global.ui_updated.connect(_on_ui_updaded)
 
 	var output = []
@@ -49,3 +50,8 @@ func _on_ui_updaded():
 	print("on_ui_updated")
 	# set main_ui_window size according to whole UI size
 	$main_ui_window.size = $main_ui_window/Control.size
+
+func _on_show_nodegraph():
+	print("show_nodegraph signal received")
+	$node_graph_window.show()
+	$node_graph_window.grab_focus()

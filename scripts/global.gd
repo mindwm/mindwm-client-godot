@@ -10,6 +10,8 @@ var actions : Array = []
 signal show_ui
 signal hide_ui
 signal switch_ui
+signal show_nodegraph
+signal hide_nodegraph
 
 signal ui_updated
 signal ui_showed
@@ -49,8 +51,11 @@ func _process(delta: float) -> void:
 
 func add_global_actions():
 	actions.append_array([
-		Action.new("restart", "restarts something"),
-		Action.new("join", "joint to some team"),
-		Action.new("list contexts", "show available contextx"),
-		Action.new("nodes", "open a node graph")
+		Action.new("restart", "restarts something", _dummy_action),
+		Action.new("join", "joint to some team", _dummy_action),
+		Action.new("list contexts", "show available contextx", _dummy_action),
+		Action.new("nodes", "open a node graph", show_nodegraph.emit)
 	])
+
+func _dummy_action():
+	print("dummy action performed")
