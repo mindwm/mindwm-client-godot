@@ -3,7 +3,7 @@ extends Control
 var search_input : LineEdit = null
 var search_results : ItemList = null
 var width_ratio : float = 0.5
-var height_ratio : float = 0.1
+var height_ratio : float = 0.3
 var pos_x : int = 200
 var pos_y : int = 200
 var width : int = 200
@@ -58,6 +58,10 @@ func _on_search_input_gui_input(event: InputEvent) -> void:
 			var f : Callable = search_results.get_item_metadata(ndx)
 			f.call()
 			_hide_and_reset()
+	elif event.is_action_pressed("ui_down"):
+		pass
+	elif event.is_action_pressed("ui_up"):
+		pass
 
 func _on_global_actions_updated():
 	if search_results:
