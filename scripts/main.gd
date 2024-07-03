@@ -31,6 +31,9 @@ func _ready() -> void:
 	else:
 		print("starting new tmux server")
 
+	#var res = $DBusClientManager.spawn_process("ls -la /home/pion", "")
+	#print(res)
+
 	#_on_ui_updaded()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

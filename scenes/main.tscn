@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://clskbl2bqpmcb"]
+[gd_scene load_steps=17 format=3 uid="uid://clskbl2bqpmcb"]
 
 [ext_resource type="PackedScene" uid="uid://bttlv3k235yq" path="res://scenes/main_ui_window.tscn" id="1_rssl1"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_vhd22"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://scripts/dbus_server_graph.gd" id="4_4om2c"]
 [ext_resource type="Script" path="res://scripts/d_bus_server_ui.gd" id="4_r6bl0"]
 [ext_resource type="PackedScene" uid="uid://jqdh3m7wv2k6" path="res://scenes/node_graph.tscn" id="6_er8a1"]
+[ext_resource type="Script" path="res://scripts/d_bus_client_manager.gd" id="7_28k5l"]
+[ext_resource type="Script" path="res://scripts/d_bus_server_process.gd" id="8_cnf1r"]
 
 [sub_resource type="DBusMethod" id="DBusMethod_40o6e"]
 member = "show"
@@ -18,6 +20,26 @@ flags = 12
 [sub_resource type="DBusMethod" id="DBusMethod_le1au"]
 member = "switch"
 flags = 12
+
+[sub_resource type="DBusMethodArgument" id="DBusMethodArgument_je0xo"]
+arg_name = "res"
+
+[sub_resource type="DBusMethodArgument" id="DBusMethodArgument_pgxlw"]
+arg_name = "uid"
+type = 4
+
+[sub_resource type="DBusMethodArgument" id="DBusMethodArgument_144bu"]
+arg_name = "output"
+type = 4
+
+[sub_resource type="DBusMethodArgument" id="DBusMethodArgument_bvp54"]
+arg_name = "is_terminated"
+type = 1
+
+[sub_resource type="DBusMethod" id="DBusMethod_gmowv"]
+member = "ProcessOutput"
+signature = Array[DBusMethodArgument]([SubResource("DBusMethodArgument_pgxlw"), SubResource("DBusMethodArgument_144bu"), SubResource("DBusMethodArgument_bvp54")])
+result = Array[DBusMethodArgument]([SubResource("DBusMethodArgument_je0xo")])
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_vhd22")
@@ -39,6 +61,13 @@ interface_name = "org.mindwm.client.godot.graph"
 autostart = true
 script = ExtResource("4_4om2c")
 
+[node name="DBusServerProcess" type="DBusServerNode" parent="."]
+object_path = "/"
+interface_name = "org.mindwm.client.godot.process"
+methods = [SubResource("DBusMethod_gmowv")]
+autostart = true
+script = ExtResource("8_cnf1r")
+
 [node name="main_ui_window" type="Window" parent="."]
 transparent_bg = true
 initial_position = 4
@@ -58,3 +87,9 @@ size = Vector2i(1024, 1024)
 visible = false
 
 [node name="node_graph" parent="node_graph_window" instance=ExtResource("6_er8a1")]
+
+[node name="DBusClientManager" type="DBusClientNode" parent="."]
+destination = "org.mindwm.client.manager"
+path = "/"
+interface = "org.mindwm.client.manager"
+script = ExtResource("7_28k5l")
