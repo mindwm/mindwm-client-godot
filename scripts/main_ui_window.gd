@@ -53,13 +53,11 @@ func _on_search_input_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		_hide_and_reset()
 	elif event.is_action_pressed("ui_accept"):
-		var ndx = search_results.get_selected_items()[0]
-		var f : Callable = search_results.get_item_metadata(ndx)
-		print("Execute action: %s" % [
-			search_results.get_item_text(ndx),
-			])
-		f.call()
-		_hide_and_reset()
+		if search_results.get_selected_items():
+			var ndx = search_results.get_selected_items()[0]
+			var f : Callable = search_results.get_item_metadata(ndx)
+			f.call()
+			_hide_and_reset()
 
 func _on_global_actions_updated():
 	if search_results:
